@@ -2,6 +2,8 @@ const fs = require('fs'),
     path = require('path'),
     express = require('express');
 
+process.env.NODE_ENV = 'production';
+
 if (!fs.existsSync('./config.js')) fs.writeFileSync('./config.js', fs.readFileSync('./defaultconfig.js', 'utf8'));
 const cfg = require('./config');
 
